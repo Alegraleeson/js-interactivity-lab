@@ -1,11 +1,19 @@
 console.log('has successfully connected')
 
+let message = document.querySelector('#message')
+
 function deleteMovie(event){
     event.target.parentNode.remove('li')
+    message.textContent = 'Movie deleted!'
 }
 
 function crossOffMovie(event){
-    event.target.classList.toggle('.checked')
+    event.target.classList.toggle('checked')
+    if(event.target.classList.contains('checked')){
+        message.textContent = 'Movie watched!'
+    } else {
+        message.textContent = 'Movie added back!'
+    }
 }
 
 function addMovie(event){
